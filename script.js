@@ -45,7 +45,7 @@ const initialPhones = [{
   description: "Xiaomi Mi 11 com câmera de 108MP",
   price: 3299.99
 }];
-const ADMIN_PASSWORD = "1234";
+const ADMIN_PASSWORD = "1234";// senha adiministrador
 var swiper = new Swiper(".mySwiper", {
   effect: "coverflow",
   grabCursor: true,
