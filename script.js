@@ -133,7 +133,7 @@ document.getElementById('checkoutForm').addEventListener('submit', function (e) 
   }
   const formattedPhone = `(${phone.slice(0, 2)})${phone.slice(2, 7)}-${phone.slice(7)}`;
   const message = encodeURIComponent(`Olá! Nova compra:\n\n` + `Cliente: ${fullName}\n` + `Telefone: ${formattedPhone}\n\n` + `Produto: ${currentProduct.name}\n` + `Preço: R$ ${currentProduct.price.toFixed(2)}\n` + `Descrição: ${currentProduct.description}`);
-  window.open(`https://wa.me/5531988035657?text=${message}`, '_blank');
+  window.open(`https://wa.me/5531288805?text=${message}`, '_blank');
   closeCheckoutModal();
   this.reset();
 });
