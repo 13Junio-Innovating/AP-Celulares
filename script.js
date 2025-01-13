@@ -102,7 +102,9 @@ function showCheckoutModal() {
   document.body.classList.add('modal-open');
   modal.style.display = 'block';
 }
-
+function formatCurrency(value) {
+  return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
+}
 document.getElementById('checkoutForm').addEventListener('submit', function (e) {
   e.preventDefault();
   
@@ -128,16 +130,16 @@ document.getElementById('checkoutForm').addEventListener('submit', function (e) 
   }
 
   let productsMessage = cartItems.map(product => `Produto: ${product.name}\n` +
-    `Preço: R$ ${Number(product.price).toFixed(2)}\n` +
+    `Preço: ${formatCurrency(Number(product.price))}\n` +
     `Descrição: ${product.description}`).join('\n\n');
   
   const totalPrice = cartItems.reduce((sum, product) => sum + Number(product.price), 0);
 
-  const message = encodeURIComponent(`Olá! Nova compra:\n\n` +
+  const message = encodeURIComponent(`Nova compra:\n\n` +
     `Cliente: ${fullName}\n` +
     `Telefone: ${formattedPhone}\n\n` +
     `${productsMessage}\n\n` +
-    `Total: R$ ${totalPrice.toFixed(2)}`);
+    `Total: ${formatCurrency(totalPrice)}`);
 
   window.open(`https://wa.me/5531288805?text=${message}`, '_blank');
 
