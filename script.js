@@ -139,7 +139,7 @@ document.getElementById('checkoutForm').addEventListener('submit', function (e) 
     `${productsMessage}\n\n` +
     `Total: R$ ${totalPrice.toFixed(2)}`);
 
-  window.open(`https://wa.me/5531988035657?text=${message}`, '_blank');
+  window.open(`https://wa.me/5531288805?text=${message}`, '_blank');
 
   cartItems = []; 
   updateCartCount();  
